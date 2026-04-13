@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Customizer",
+  "version": "2.0",
+  "description": "Instagramの要素を非表示にできる拡張機能",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "設定を開く"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "css": ["style.css"],
+      "js": ["content.js"],
+      "run_at": "document_start" 
+    }
+  ]
+}

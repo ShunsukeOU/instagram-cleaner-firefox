@@ -1,0 +1,20 @@
+/* --- ストーリーズ --- */
+html.hide-stories div[role="menu"],
+html.hide-stories div[aria-label="ストーリーズ"] {
+    display: none !important;
+}
+
+/* --- 投稿セクション (フィード全体) --- */
+html.hide-posts article {
+    display: none !important;
+}
+
+/* --- フッター --- */
+html.hide-footer footer {
+    display: none !important;
+}
+
+/* --- 左側のナビゲーションメニュー全体 --- */
+html.hide-nav nav {
+    display: none !important;
+}
