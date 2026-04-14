@@ -1,17 +1,27 @@
-const checkboxes = ['hideStories', 'hidePosts', 'hideFooter', 'hideNav'];
+const checkboxes = [
+    'hideStories', 'hideFooter', 'hideHome', 'hideSearch', 
+    'hideExplore', 'hideReels', 'hideMessages', 
+    'hideNotifications', 'hideCreate', 'hideProfile', 'hideMore'
+];
 
-//チェックボックス
+// ストレージから設定を読み込んで反映
 browser.storage.local.get(checkboxes).then((settings) => {
     checkboxes.forEach(id => {
-        document.getElementById(id).checked = settings[id] || false;
+        const el = document.getElementById(id);
+        if (el) {
+            el.checked = settings[id] || false;
+        }
     });
 });
 
-//チェックボックスがクリックされたら設定を保存
+// 設定変更時に保存
 checkboxes.forEach(id => {
-    document.getElementById(id).addEventListener('change', (e) => {
-        let setting = {};
-        setting[id] = e.target.checked;
-        browser.storage.local.set(setting);
-    });
+    const el = document.getElementById(id);
+    if (el) {
+        el.addEventListener('change', (e) => {
+            let setting = {};
+            setting[id] = e.target.checked;
+            browser.storage.local.set(setting);
+        });
+    }
 });

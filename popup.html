@@ -3,15 +3,29 @@
 <head>
     <meta charset="utf-8">
     <style>
-        body { width: 200px; padding: 10px; font-family: sans-serif; }
-        label { display: block; margin-bottom: 10px; cursor: pointer; }
+        body { width: 250px; padding: 10px; font-family: sans-serif; }
+        label { display: block; margin-bottom: 8px; cursor: pointer; font-size: 14px; }
+        h3 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        .section-title { font-weight: bold; margin-top: 10px; color: #555; }
     </style>
 </head>
 <body>
     <h3>表示設定</h3>
-    <label><input type="checkbox" id="hideStories"> ストーリーズを隠す</label>
-    <label><input type="checkbox" id="hidePosts"> 投稿を隠す</label>
-    <label><input type="checkbox" id="hideFooter"> フッターを隠す</label>
+    
+    <div class="section-title">セクション</div>
+    <label><input type="checkbox" id="hideStories"> ストーリーズ</label>
+    <label><input type="checkbox" id="hideFooter"> フッター</label>
+
+    <div class="section-title">ナビゲーションボタン</div>
+    <label><input type="checkbox" id="hideHome"> ホーム</label>
+    <label><input type="checkbox" id="hideSearch"> 検索</label>
+    <label><input type="checkbox" id="hideExplore"> 発見 (Explore)</label>
+    <label><input type="checkbox" id="hideReels"> リール</label>
+    <label><input type="checkbox" id="hideMessages"> メッセージ</label>
+    <label><input type="checkbox" id="hideNotifications"> 通知</label>
+    <label><input type="checkbox" id="hideCreate"> 作成</label>
+    <label><input type="checkbox" id="hideProfile"> プロフィール</label>
+    <label><input type="checkbox" id="hideMore"> バーガー</label>
 
     <script src="popup.js"></script>
 </body>

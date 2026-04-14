@@ -1,20 +1,36 @@
-/* --- ストーリーズ --- */
+/* --- セクション --- */
 html.hide-stories div[role="menu"],
-html.hide-stories div[aria-label="ストーリーズ"] {
-    display: none !important;
-}
+html.hide-stories div[aria-label="ストーリーズ"],
+html.hide-stories section[role="complementary"] { display: none !important; }
 
-/* --- 投稿セクション (フィード全体) --- */
-html.hide-posts article {
-    display: none !important;
-}
+html.hide-footer footer { display: none !important; }
 
-/* --- フッター --- */
-html.hide-footer footer {
-    display: none !important;
-}
+/* --- ナビゲーションボタン --- */
+/* ホーム */
+html.hide-home nav a[href="/"],
+html.hide-home nav div[role="button"]:has(svg[aria-label*="ホーム"]) { display: none !important; }
 
-/* --- 左側のナビゲーションメニュー全体 --- */
-html.hide-nav nav {
-    display: none !important;
-}
+/* 検索 */
+html.hide-search nav div[role="button"]:has(svg[aria-label*="検索"]) { display: none !important; }
+
+/* 発見 */
+html.hide-explore nav a[href="/explore/"] { display: none !important; }
+
+/* リール */
+html.hide-reels nav a[href="/reels/"] { display: none !important; }
+
+/* メッセージ */
+html.hide-messages nav a[href*="/direct/"] { display: none !important; }
+
+/* 通知 */
+html.hide-notifications nav div[role="button"]:has(svg[aria-label*="通知"]) { display: none !important; }
+
+/* 作成 */
+html.hide-create nav div[role="button"]:has(svg[aria-label*="新規投稿"]) { display: none !important; }
+
+/* プロフィール */
+html.hide-profile nav a[href*="/"] img[alt*="のプロフィール写真"] { display: none !important; }
+html.hide-profile nav a[href*="/"]:has(img[alt*="のプロフィール写真"]) { display: none !important; }
+
+/* もっと見る (左下の設定ボタン) */
+html.hide-more nav div[role="button"]:has(svg[aria-label*="設定"]) { display: none !important; }
