@@ -1,36 +1,78 @@
 /* --- セクション --- */
-html.hide-stories div[role="menu"],
-html.hide-stories div[aria-label="ストーリーズ"],
-html.hide-stories section[role="complementary"] { display: none !important; }
 
-html.hide-footer footer { display: none !important; }
+html.hide-stories [aria-label="ストーリーズ"],
+html.hide-stories [aria-label="Stories"],
+html.hide-stories main div[role="menu"],
+html.hide-stories main section > div:first-child:has(ul):not(:has(article)),
+html.hide-stories main > div > div > div:first-child:has(ul):not(:has(article)),
+html.hide-stories main > div > section > div:first-child:has(ul):not(:has(article)),
+html.hide-stories main > div:first-child > div:first-child > div:first-child:has(ul):not(:has(article)) { 
+    display: none !important; 
+}
+
+/* フッター */
+html.hide-footer footer,
+html.hide-footer div:has(> a[href*="about.meta.com"]) { display: none !important; }
+
 
 /* --- ナビゲーションボタン --- */
+
 /* ホーム */
-html.hide-home nav a[href="/"],
-html.hide-home nav div[role="button"]:has(svg[aria-label*="ホーム"]) { display: none !important; }
+html.hide-home nav a[href="/"]:has(svg),
+html.hide-home a[href="/"]:has(svg[aria-label*="ホーム"]) { display: none !important; }
 
 /* 検索 */
-html.hide-search nav div[role="button"]:has(svg[aria-label*="検索"]) { display: none !important; }
+html.hide-search a:has(svg[aria-label*="検索"]),
+html.hide-search a:has(svg[aria-label*="Search"]),
+html.hide-search div[role="button"]:has(svg[aria-label*="検索"]),
+html.hide-search div[role="button"]:has(svg[aria-label*="Search"]) { display: none !important; }
 
 /* 発見 */
-html.hide-explore nav a[href="/explore/"] { display: none !important; }
+html.hide-explore a[href*="/explore/"] { display: none !important; }
 
 /* リール */
-html.hide-reels nav a[href="/reels/"] { display: none !important; }
+html.hide-reels a[href*="/reels/"] { display: none !important; }
 
-/* メッセージ */
-html.hide-messages nav a[href*="/direct/"] { display: none !important; }
+/* メッセージ（左のナビゲーション） */
+html.hide-messages a[href*="/direct/"] { display: none !important; }
 
 /* 通知 */
-html.hide-notifications nav div[role="button"]:has(svg[aria-label*="通知"]) { display: none !important; }
+html.hide-notifications a:has(svg[aria-label*="通知"]),
+html.hide-notifications a:has(svg[aria-label*="お知らせ"]),
+html.hide-notifications a:has(svg[aria-label*="Notifications"]),
+html.hide-notifications div[role="button"]:has(svg[aria-label*="通知"]),
+html.hide-notifications div[role="button"]:has(svg[aria-label*="お知らせ"]),
+html.hide-notifications div[role="button"]:has(svg[aria-label*="Notifications"]) { display: none !important; }
 
 /* 作成 */
-html.hide-create nav div[role="button"]:has(svg[aria-label*="新規投稿"]) { display: none !important; }
+html.hide-create a:has(svg[aria-label*="作成"]),
+html.hide-create a:has(svg[aria-label*="投稿"]),
+html.hide-create a:has(svg[aria-label*="New post"]),
+html.hide-create div[role="button"]:has(svg[aria-label*="作成"]),
+html.hide-create div[role="button"]:has(svg[aria-label*="投稿"]),
+html.hide-create div[role="button"]:has(svg[aria-label*="New post"]) { display: none !important; }
 
 /* プロフィール */
-html.hide-profile nav a[href*="/"] img[alt*="のプロフィール写真"] { display: none !important; }
-html.hide-profile nav a[href*="/"]:has(img[alt*="のプロフィール写真"]) { display: none !important; }
+html.hide-profile a:has(img[alt*="プロフィール写真"]),
+html.hide-profile a:has(img[alt*="profile picture"]) { display: none !important; }
 
-/* もっと見る (左下の設定ボタン) */
-html.hide-more nav div[role="button"]:has(svg[aria-label*="設定"]) { display: none !important; }
+/* バーガー（もっと見る） */
+html.hide-more a:has(svg[aria-label*="詳細"]),
+html.hide-more a:has(svg[aria-label*="設定"]),
+html.hide-more a:has(svg[aria-label*="More"]),
+html.hide-more div[role="button"]:has(svg[aria-label*="詳細"]),
+html.hide-more div[role="button"]:has(svg[aria-label*="設定"]),
+html.hide-more div[role="button"]:has(svg[aria-label*="More"]) { display: none !important; }
+
+/* その他のMeta製アプリ (左下の四角3つアイコンなど) */
+html.hide-meta-apps a:has(svg[aria-label*="Meta"]),
+html.hide-meta-apps div[role="button"]:has(svg[aria-label*="Meta"]),
+html.hide-meta-apps a:has(svg[aria-label*="アプリ"]),
+html.hide-meta-apps div[role="button"]:has(svg[aria-label*="アプリ"]) { display: none !important; }
+
+
+/* --- フローティング要素 --- */
+
+/* 右下のメッセージアイコン (左側のメニュー[nav]の中には無いメッセージボタンを指定) */
+html.hide-floating-message div[role="button"]:has(svg[aria-label*="メッセージ"]):not(nav *),
+html.hide-floating-message div[role="button"]:has(svg[aria-label*="Messenger"]):not(nav *) { display: none !important; }

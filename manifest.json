@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Instagram Customizer",
-  "version": "2.0",
+  "version": "1.0",
   "description": "Instagramの要素を非表示にできる拡張機能",
   "permissions": [
     "storage"
@@ -17,5 +17,13 @@
       "js": ["content.js"],
       "run_at": "document_start" 
     }
-  ]
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "instagram-customizer@yourdomain.com",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
 }

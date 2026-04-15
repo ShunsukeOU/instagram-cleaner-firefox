@@ -3,30 +3,49 @@
 <head>
     <meta charset="utf-8">
     <style>
-        body { width: 250px; padding: 10px; font-family: sans-serif; }
-        label { display: block; margin-bottom: 8px; cursor: pointer; font-size: 14px; }
-        h3 { border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-        .section-title { font-weight: bold; margin-top: 10px; color: #555; }
+        body { width: 300px; padding: 15px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f9f9f9; color: #333; margin: 0; }
+        h3 { border-bottom: 1px solid #e0e0e0; padding-bottom: 10px; margin-top: 0; text-align: center; font-size: 16px; }
+        .section-title { font-weight: 600; margin-top: 15px; margin-bottom: 5px; color: #8e8e8e; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .setting-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .setting-item:last-child { border-bottom: none; }
+        .setting-label { font-size: 14px; font-weight: 500; }
+        .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #e5e5ea; transition: .3s; border-radius: 24px; }
+        .slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 2px; bottom: 2px; background-color: white; transition: .3s; border-radius: 50%; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        input:checked + .slider { background-color: #34c759; /* iOSの緑色 */ }
+        input:focus + .slider { box-shadow: 0 0 1px #34c759; }
+        input:checked + .slider:before { transform: translateX(20px); }
     </style>
 </head>
 <body>
-    <h3>表示設定</h3>
+    <h3>Instagram Cleaner</h3>
     
     <div class="section-title">セクション</div>
-    <label><input type="checkbox" id="hideStories"> ストーリーズ</label>
-    <label><input type="checkbox" id="hideFooter"> フッター</label>
+    <!-- <div class="setting-item">
+        <span class="setting-label">ストーリーズ</span>
+        <label class="switch"><input type="checkbox" id="hideStories"><span class="slider"></span></label>
+    </div> -->
+    <div class="setting-item">
+        <span class="setting-label">フッター</span>
+        <label class="switch"><input type="checkbox" id="hideFooter"><span class="slider"></span></label>
+    </div>
 
     <div class="section-title">ナビゲーションボタン</div>
-    <label><input type="checkbox" id="hideHome"> ホーム</label>
-    <label><input type="checkbox" id="hideSearch"> 検索</label>
-    <label><input type="checkbox" id="hideExplore"> 発見 (Explore)</label>
-    <label><input type="checkbox" id="hideReels"> リール</label>
-    <label><input type="checkbox" id="hideMessages"> メッセージ</label>
-    <label><input type="checkbox" id="hideNotifications"> 通知</label>
-    <label><input type="checkbox" id="hideCreate"> 作成</label>
-    <label><input type="checkbox" id="hideProfile"> プロフィール</label>
-    <label><input type="checkbox" id="hideMore"> バーガー</label>
-
+    <div class="setting-item"><span class="setting-label">ホーム</span><label class="switch"><input type="checkbox" id="hideHome"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">検索</span><label class="switch"><input type="checkbox" id="hideSearch"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">発見（Explore）</span><label class="switch"><input type="checkbox" id="hideExplore"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">リール</span><label class="switch"><input type="checkbox" id="hideReels"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">メッセージ</span><label class="switch"><input type="checkbox" id="hideMessages"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">通知</span><label class="switch"><input type="checkbox" id="hideNotifications"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">作成</span><label class="switch"><input type="checkbox" id="hideCreate"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">プロフィール</span><label class="switch"><input type="checkbox" id="hideProfile"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">バーガー（３本線）</span><label class="switch"><input type="checkbox" id="hideMore"><span class="slider"></span></label></div>
+    <div class="setting-item"><span class="setting-label">その他のMeta製アプリ</span><label class="switch"><input type="checkbox" id="hideMetaApps"><span class="slider"></span></label></div>
+    <div class="setting-item">
+        <span class="setting-label">メッセージアイコン（画面右下）</span>
+        <label class="switch"><input type="checkbox" id="hideFloatingMessage"><span class="slider"></span></label>
+    </div>
     <script src="popup.js"></script>
 </body>
 </html>
